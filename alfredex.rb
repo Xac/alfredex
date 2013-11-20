@@ -14,11 +14,14 @@ class Alfredex
         name.downcase =~ /#{mons.join('|')}/
       end
 
+      # maximum 10 lookups, don't flood the user with tabs
+      matches = matches.to_a[0..9]
+
       feedback = Feedback.new
       feedback.add_item({
         :title => "Find Multiple Pokemon",
-        :subtitle => matches.map{|m| m[0]}.join(', ')[0..10],
-        :arg => matches.map{|m| m[1]['url_name'] }[0..10].join(""),
+        :subtitle => matches.map{|m| m[0]}.join(', '),
+        :arg => matches.map{|m| m[1]['url_name'] }.join(","),
         :uid => matches.map{|m| m[1]['number'] }.join(','),
         :icon => {:type => "filetype", :name => "icon.png"}
       })
