@@ -18,7 +18,7 @@ class Alfredex
       feedback.add_item({
         :title => "Find Multiple Pokemon",
         :subtitle => matches.map{|m| m[0]}.join(', '),
-        :arg => matches.map{|m| m[1]['url_name'] }.join(","),
+        :arg => matches.map{|m| m[1]['url_name'] }[0..10].join(""),
         :uid => matches.map{|m| m[1]['number'] }.join(','),
         :icon => {:type => "filetype", :name => "icon.png"}
       })
