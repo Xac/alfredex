@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>11D5721D-E45C-4D45-82C8-2CC370002271</string>
+				<string>9274C9EC-1949-4B87-8D3B-FB92C1305640</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -60,17 +60,17 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>http://www.pokemondb.net/pokedex/{query}</string>
-				<key>utf8</key>
-				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>ruby -e '"{query}".split(",").each{|p| `open http://www.pokemondb.net/pokedex/#{p}` }'</string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>11D5721D-E45C-4D45-82C8-2CC370002271</string>
+			<string>9274C9EC-1949-4B87-8D3B-FB92C1305640</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -79,12 +79,12 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>11D5721D-E45C-4D45-82C8-2CC370002271</key>
+		<key>2882CE00-52E0-4A3D-AB78-7B0D5E82CFAA</key>
 		<dict>
 			<key>ypos</key>
 			<real>90</real>
 		</dict>
-		<key>2882CE00-52E0-4A3D-AB78-7B0D5E82CFAA</key>
+		<key>9274C9EC-1949-4B87-8D3B-FB92C1305640</key>
 		<dict>
 			<key>ypos</key>
 			<real>90</real>
