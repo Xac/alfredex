@@ -9,9 +9,14 @@ class Alfredex
 
     if string =~ /[\/,\,]/ # contains separators, look up multiple
       mons = string.split(/[\/,\,]/).map{|n| n.strip.downcase }
+      dashed_mons = mons.select{|m| m =~ /\-/}
 
       matches = FILE_DATA.select do |name, data|
-        name.downcase =~ /#{mons.join('|')}/
+        if mons.include? name.downcase
+          true
+        elsif dashed_mons.length > 0 # contains dash and doesn't match, split
+          dashed_mons.any?{|m| m.split('-')[0] == name.downcase }
+        end
       end
 
       # maximum 10 lookups, don't flood the user with tabs
